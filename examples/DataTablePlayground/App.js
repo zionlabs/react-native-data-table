@@ -20,7 +20,7 @@ class HomeScreen extends React.Component {
 }
 
 HomeScreen.propTypes = {
-  navigation: PropTypes.func,
+  navigation: PropTypes.object,
 };
 
 export default StackNavigator({ // eslint-disable-line
