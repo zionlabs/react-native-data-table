@@ -1,23 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, Button } from 'react-native';
 
-export default class App extends React.Component {
+import { StackNavigator } from 'react-navigation';
+
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Examples!',
+  };
+
   render() {
+    const { navigation } = this.props;
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+        <Button title="Simple" onPress={() => navigation.navigate('Simple')} />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+HomeScreen.propTypes = {
+  navigation: PropTypes.func,
+};
+
+export default StackNavigator({ // eslint-disable-line
+  Home: {
+    screen: HomeScreen,
   },
 });
