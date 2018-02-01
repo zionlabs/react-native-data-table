@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Button } from 'react-native';
 
 import { StackNavigator } from 'react-navigation';
+import { SimpleScreen } from './js';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -24,7 +25,6 @@ HomeScreen.propTypes = {
 };
 
 export default StackNavigator({ // eslint-disable-line
-  Home: {
-    screen: HomeScreen,
-  },
+  Home: { screen: HomeScreen },
+  Simple: { screen: SimpleScreen },
 });
