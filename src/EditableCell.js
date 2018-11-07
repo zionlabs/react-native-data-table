@@ -1,10 +1,3 @@
-/* @flow weak */
-
-/**
- * mSupply Mobile
- * Sustainable Solutions (NZ) Ltd. 2016
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -45,14 +38,17 @@ export class EditableCell extends React.Component {
   }
 
   render() {
-    const { style, width, textStyle, refCallback, ...textInputProps } = this.props;
+    const { style, width, textStyle, refCallback, textInputProps } = this.props;
     return (
       <View style={[defaultStyles.cell, style, { flex: width }]}>
         <TextInput
           {...textInputProps}
           ref={refCallback}
           style={[defaultStyles.text, textStyle]}
-          onChangeText={(text) => this.setState({ value: text })}
+          onChangeText={(text) => {
+            this.setState({ value: text })
+            if (textInputProps.onChangeText) textInputProps.onChangeText(text);
+          }}
           onEndEditing={this.onEndEditing}
           value={this.state.value}
         />
