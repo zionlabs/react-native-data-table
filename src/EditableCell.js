@@ -38,9 +38,9 @@ export class EditableCell extends React.Component {
   }
 
   render() {
-    const { style, width, textStyle, refCallback, textInputProps } = this.props;
+    const { style, width, textStyle, refCallback, textInputProps, pointerEvents } = this.props;
     return (
-      <View style={[defaultStyles.cell, style, { flex: width }]}>
+      <View pointerEvents={pointerEvents} style={[defaultStyles.cell, style, { flex: width }]}>
         <TextInput
           {...textInputProps}
           ref={refCallback}
@@ -58,6 +58,7 @@ export class EditableCell extends React.Component {
 }
 
 EditableCell.propTypes = {
+  pointerEvents: PropTypes.string,
   style: ViewPropTypes.style,
   refCallback: PropTypes.func,
   textStyle: TextInput.propTypes.style,
@@ -73,6 +74,7 @@ EditableCell.propTypes = {
 EditableCell.defaultProps = {
   width: 1,
   value: 'N/A',
+  pointerEvents: 'auto'
 };
 
 const defaultStyles = StyleSheet.create({
