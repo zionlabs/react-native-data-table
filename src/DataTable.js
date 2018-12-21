@@ -1,11 +1,3 @@
-
-/* @flow weak */
-
-/**
- * mSupply Mobile
- * Sustainable Solutions (NZ) Ltd. 2016
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -34,7 +26,7 @@ export class DataTable extends React.Component {
       dataSource,
       refCallback,
       renderRow,
-      ...listViewProps,
+      ...listViewProps
     } = this.props;
 
     return (

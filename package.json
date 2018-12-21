@@ -1,6 +1,6 @@
 {
   "name": "@builttocreate/react-native-data-table",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A generic table to lay out data from realm for react native",
   "repository": {
     "type": "git",
