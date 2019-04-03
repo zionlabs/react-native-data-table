@@ -31,6 +31,6 @@ const defaultStyles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
   },
 });

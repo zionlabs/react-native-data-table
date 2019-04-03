@@ -84,7 +84,7 @@ const defaultStyles = StyleSheet.create({
     flexWrap: 'nowrap',
     justifyContent: 'flex-start',
     alignItems: 'stretch',
-    backgroundColor: '#d6f3ff',
+    backgroundColor: 'white',
   },
   cellContainer: {
     flex: 1,
